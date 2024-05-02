@@ -1,3 +1,4 @@
+---
 - name: Configure VRFs and VLANs on Arista EOS devices
   hosts: arista_node
   gather_facts: no
