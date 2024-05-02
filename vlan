@@ -1,0 +1,11 @@
+---
+- name: Create multiple VLANs on Arista Switch
+  hosts: arista_node
+  gather_facts: no
+  tasks:
+    - name: Create VLANs
+      arista.eos.eos_config:
+        lines:
+          - vlan {{ item }}
+          - name VLAN{{ item }}
+      loop: "{{ range(10, 101, 10) | list }}"
